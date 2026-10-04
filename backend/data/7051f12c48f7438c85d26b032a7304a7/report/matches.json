@@ -1,0 +1,33 @@
+[
+  {
+    "match_id": "M-000001",
+    "source_a_asset_id": "A-000001",
+    "source_b_asset_id": "A-000001",
+    "source_a_file": "source_a.pdf",
+    "source_b_file": "source_b.pdf",
+    "source_a_page": 1,
+    "source_b_sheet": null,
+    "source_b_row": null,
+    "application_a": "",
+    "application_b": "",
+    "application_no_equal": false,
+    "score": 1.0,
+    "decision": "EXACT_VISUAL_IDENTITY",
+    "match_origin": "exact_hash",
+    "metrics": {
+      "phash": 1.0,
+      "dhash": 1.0,
+      "ahash": 1,
+      "ssim": 1.0,
+      "contour_similarity": 1,
+      "mask_iou": 1.0,
+      "mask_ssim": 1.0,
+      "sift_good": 385,
+      "sift_inliers": 385,
+      "canonical_sha256": "d6cba6419fc875623c83814f913674d6ded6cd83f7cf26361e77e3e0000b9d1d",
+      "mask_sha256": "892b741779fa3d685972e22cd93b761de525601e1ecd1d99e844bc0855a367cf"
+    },
+    "asset_a_url": "/api/jobs/7051f12c48f7438c85d26b032a7304a7/assets/A/A_000001.png",
+    "asset_b_url": "/api/jobs/7051f12c48f7438c85d26b032a7304a7/assets/B/A_000001.png"
+  }
+]

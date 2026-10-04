@@ -1,0 +1,19 @@
+[
+  {
+    "asset_id": "A-000001",
+    "source_type": "pdf",
+    "source_file": "source_a.pdf",
+    "page": 1,
+    "bbox": [
+      118.0,
+      48.0,
+      202.0,
+      112.0
+    ],
+    "application_no": "",
+    "field_code": "(540)",
+    "field_label": "(540) logo",
+    "image_file": "A_000001.png",
+    "extract_method": "pdf_540_embedded_image"
+  }
+]

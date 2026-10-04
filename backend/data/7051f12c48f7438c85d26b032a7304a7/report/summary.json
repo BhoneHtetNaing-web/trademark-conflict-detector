@@ -1,0 +1,24 @@
+{
+  "source_a": {
+    "file": "source_a.pdf",
+    "type": ".pdf",
+    "assets": 1,
+    "sha256": "deff97e4bb4a1384777f93c216eef6b49e4d562a43ad4b41a7aa58024ea2d31c"
+  },
+  "source_b": {
+    "file": "source_b.pdf",
+    "type": ".pdf",
+    "assets": 1,
+    "sha256": "87538dce484f07b60211671d2d2bc709b716aa74f0d14ae8315b954d190592a9"
+  },
+  "matched": 1,
+  "unmatched_a": 0,
+  "unmatched_b": 0,
+  "exact_identity": 1,
+  "very_high": 0,
+  "high": 0,
+  "application_number_equal_matches": 0,
+  "application_number_used_for_matching": false,
+  "engine": "Apexive AI Trademark Visual Conflict Engine v4",
+  "note": "Application numbers are metadata only. Visual matching is independent of application-number equality. Similarity results are technical evidence for review, not a legal infringement verdict."
+}

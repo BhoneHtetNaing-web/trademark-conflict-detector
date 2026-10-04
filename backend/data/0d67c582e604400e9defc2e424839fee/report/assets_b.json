@@ -1,0 +1,18 @@
+[
+  {
+    "asset_id": "B-000001",
+    "source_type": "xlsx",
+    "source_file": "source_b.xlsx",
+    "sheet": "Sheet",
+    "row": 2,
+    "column": 2,
+    "application_no": "T/2026/002509",
+    "company": "Example mark",
+    "mark": "Example mark",
+    "field_code": "Mark",
+    "field_label": "Mark column logo",
+    "image_file": "B_000001.png",
+    "extract_method": "xlsx_mark_column_image",
+    "media_ext": ".png"
+  }
+]

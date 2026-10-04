@@ -1,0 +1,27 @@
+{
+  "source_a": {
+    "file": "source_a.pdf",
+    "type": ".pdf",
+    "assets": null,
+    "sha256": "479ae4b344c251ad5d8fd4e3ab37cc32f018f0752cf882f3af31268707ce1f74"
+  },
+  "source_b": {
+    "file": "source_b.pdf",
+    "type": ".pdf",
+    "assets": null,
+    "sha256": "479ae4b344c251ad5d8fd4e3ab37cc32f018f0752cf882f3af31268707ce1f74"
+  },
+  "matched": 0,
+  "unmatched_a": null,
+  "unmatched_b": null,
+  "exact_identity": 0,
+  "very_high": 0,
+  "high": 0,
+  "application_number_equal_matches": 0,
+  "application_number_used_for_matching": false,
+  "identical_sources": true,
+  "analysis_skipped": true,
+  "engine": "Apexive AI Trademark Visual Conflict Engine v4",
+  "message": "Both uploads are byte-for-byte identical. Matching was skipped; upload two different files to check for conflicts.",
+  "note": "Both uploads are byte-for-byte identical. Matching was skipped; upload two different files to check for conflicts."
+}

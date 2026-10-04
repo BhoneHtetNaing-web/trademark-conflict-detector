@@ -1,0 +1,17 @@
+[
+  {
+    "asset_id": "A-000001",
+    "source_type": "pdf",
+    "source_file": "source_a.pdf",
+    "page": 1,
+    "bbox": [
+      68.88888888888889,
+      59.98416886543536,
+      236.11111111111111,
+      77.2018469656992
+    ],
+    "application_no": "",
+    "image_file": "A_000001.png",
+    "extract_method": "pdf_page_contour"
+  }
+]

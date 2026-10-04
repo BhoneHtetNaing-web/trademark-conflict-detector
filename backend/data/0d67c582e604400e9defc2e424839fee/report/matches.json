@@ -1,0 +1,38 @@
+[
+  {
+    "match_id": "M-000001",
+    "source_a_asset_id": "A-000001",
+    "source_b_asset_id": "B-000001",
+    "source_a_file": "source_a.pdf",
+    "source_b_file": "source_b.xlsx",
+    "source_a_page": 1,
+    "source_b_page": null,
+    "source_a_sheet": null,
+    "source_a_row": null,
+    "source_b_sheet": "Sheet",
+    "source_b_row": 2,
+    "source_a_field": "(540) logo",
+    "source_b_field": "Mark column logo",
+    "application_a": "",
+    "application_b": "T/2026/002509",
+    "application_no_equal": false,
+    "score": 0.871199,
+    "decision": "VERY_HIGH_VISUAL_SIMILARITY",
+    "match_origin": "hash_candidate",
+    "metrics": {
+      "phash": 0.9375,
+      "dhash": 1.0,
+      "ahash": -5,
+      "ssim": 0.81528,
+      "contour_similarity": 0.96701,
+      "mask_iou": 0.85984,
+      "mask_ssim": 0.84256,
+      "sift_good": 26,
+      "sift_inliers": 11,
+      "canonical_sha256": "63019977e001495005236cdcfadfef1b182de285f07e4f808ca9e6e42c51454f",
+      "mask_sha256": "a2fcae9b85fd294ffeb26a414529829bc93cb5c98897d4ec62c91e7dab368caa"
+    },
+    "asset_a_url": "/api/jobs/0d67c582e604400e9defc2e424839fee/assets/A/A_000001.png",
+    "asset_b_url": "/api/jobs/0d67c582e604400e9defc2e424839fee/assets/B/B_000001.png"
+  }
+]
