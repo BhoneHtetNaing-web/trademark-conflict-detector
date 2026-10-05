@@ -1,3 +1,4 @@
+scikit-image>=0.24,<0.26
 annotated-doc==0.0.5
 annotated-types==0.8.0
 alembic==1.20.0
