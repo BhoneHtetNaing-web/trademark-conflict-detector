@@ -16,8 +16,12 @@ ALLOWED={'.pdf','.xlsx','.xlsm'}
 
 def clean_name(name):return Path(name or 'upload').name
 
+@app.get("/")
+def root():
+    return {"status": "ok"}
+
 @app.get('/health')
-def health():return {'status':'ok','engine':'v4'}
+def health():return {'engine':'v4'}
 
 @app.post('/api/analyze')
 async def analyze(file_a:UploadFile=File(...),file_b:UploadFile=File(...)):
