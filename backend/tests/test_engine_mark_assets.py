@@ -113,4 +113,27 @@ class MarkAssetExtractionTests(unittest.TestCase):
         doc.save(pdf_path)
         doc.close()
 
-        xlsx_
+        xlsx_path = self.root / 'office.xlsx'
+        workbook = Workbook()
+        sheet = workbook.active
+        sheet.append(['Application No.', 'Mark'])
+        sheet.append(['T/2026/002509', 'Example mark'])
+        sheet.add_image(SpreadsheetImage(str(self.image_path)), 'B2')
+        workbook.save(xlsx_path)
+        workbook.close()
+
+        for index, (source_a, source_b, field_a, field_b) in enumerate((
+            (pdf_path, xlsx_path, '(540) logo', 'Mark column logo'),
+            (xlsx_path, pdf_path, 'Mark column logo', '(540) logo'),
+        )):
+            job_dir = self.root / f'job-{index}'
+            summary = run(job_dir, source_a, source_b, lambda *_: None)
+            matches = json.loads((job_dir / 'report' / 'matches.json').read_text())
+
+            self.assertEqual(summary['matched'], 1)
+            self.assertEqual(matches[0]['source_a_field'], field_a)
+            self.assertEqual(matches[0]['source_b_field'], field_b)
+
+
+if __name__ == '__main__':
+    unittest.main()

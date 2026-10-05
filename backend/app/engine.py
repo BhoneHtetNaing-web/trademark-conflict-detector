@@ -129,7 +129,16 @@ def verify(a,b):
     return float(final),{'phash':round(ph,4),'dhash':round(dh,4),'ahash':round(ah,4),'ssim':round(ss,5),'contour_similarity':round(cs,5),'mask_iou':round(best_iou,5),'mask_ssim':round(best_ms,5),'sift_good':len(good),'sift_inliers':inl,'canonical_sha256':fa['sha256'],'mask_sha256':fa['mask_sha256']},exact
 
 def app_metadata(text):
-    m=APP_RE.search(text or '');return m.group(0) if m else ''
+    m=APP_RE.search(text or '')
+    return f'T/{m.group(1)}/{m.group(2)}' if m else ''
+
+def page_applications(page):
+    applications=[]
+    for block in page.get_text('blocks'):
+        text=block[4] if len(block)>4 else ''
+        for match in APP_RE.finditer(text or ''):
+            applications.append(((block[1]+block[3])/2,f'T/{match.group(1)}/{match.group(2)}'))
+    return applications
 
 def page_text_words(page):
     try:return page.get_text('words')
@@ -140,6 +149,7 @@ def pdf_assets(path,out,progress):
     for pi,page in enumerate(doc):
         progress(int(pi/max(pages,1)*40),f'Extracting PDF: page {pi+1}/{pages}')
         fields=page.search_for('(540)')
+        applications=page_applications(page)
         if not fields:
             progress(int((pi+1)/max(pages,1)*40),f'Extracting PDF: page {pi+1}/{pages}')
             continue
@@ -186,7 +196,11 @@ def pdf_assets(path,out,progress):
             im=cv(pix.tobytes('png'))
             if im is None:raise ValueError(f'Could not render (540) logo on PDF page {pi+1}')
             asset_no+=1;fn=f'A_{asset_no:06d}.png';cv2.imwrite(str(out/fn),im)
-            assets.append({'asset_id':f'A-{asset_no:06d}','source_type':'pdf','source_file':path.name,'page':pi+1,'bbox':[bbox.x0,bbox.y0,bbox.x1,bbox.y1],'application_no':app_metadata(page.get_text('text')),'field_code':'(540)','field_label':'(540) logo','image_file':fn,'extract_method':method})
+            application_no=(
+                min(applications,key=lambda item:abs(item[0]-(field.y0+field.y1)/2))[1]
+                if applications else app_metadata(page.get_text('text'))
+            )
+            assets.append({'asset_id':f'A-{asset_no:06d}','source_type':'pdf','source_file':path.name,'page':pi+1,'bbox':[bbox.x0,bbox.y0,bbox.x1,bbox.y1],'application_no':application_no,'field_code':'(540)','field_label':'(540) logo','image_file':fn,'extract_method':method})
         progress(int((pi+1)/max(pages,1)*40),f'Extracting PDF: page {pi+1}/{pages}')
     return assets
 
