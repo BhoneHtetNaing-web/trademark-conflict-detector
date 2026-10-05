@@ -10,7 +10,7 @@ BASE=Path(__file__).resolve().parent.parent
 DATA=BASE/'data';DATA.mkdir(exist_ok=True)
 JOBS={}
 app=FastAPI(title='Apexive AI Trademark Visual Conflict API',version='4.0.0')
-app.add_middleware(CORSMiddleware,allow_origins=['*'],allow_credentials=False,allow_methods=['*'],allow_headers=['*'])
+app.add_middleware(CORSMiddleware,allow_origins=['https://trademark-conflict-detector.vercel.app', 'https://trademark.apexiveai.com'],allow_credentials=True,allow_methods=['*'],allow_headers=['*'])
 
 ALLOWED={'.pdf','.xlsx','.xlsm'}
 
